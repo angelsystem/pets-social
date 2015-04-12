@@ -61,6 +61,13 @@ class TutorialViewController: UIPageViewController, UIPageViewControllerDataSour
             }
             return nil
     }
+    
+    func forward(index: Int) {
+        if let nextViewController = self.viewControllerAtIndex(index + 1) {
+        setViewControllers([nextViewController], direction: .Forward, animated: true,
+        completion: nil)
+        }
+    }
 
     
 //    func presentationCountForPageViewController(pageViewController: UIPageViewController) -> Int {

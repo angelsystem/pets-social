@@ -17,13 +17,21 @@
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="login" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tis-re-mg7">
+                                <rect key="frame" x="186" y="68" width="37" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="366" y="375"/>
+            <point key="canvasLocation" x="2005" y="330"/>
         </scene>
         <!--Tutorial View Controller-->
         <scene sceneID="5Wn-Mq-lDC">
@@ -33,7 +41,7 @@
                 </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eob-T8-Gap" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="903" y="375"/>
+            <point key="canvasLocation" x="997" y="338"/>
         </scene>
         <!--Tutorial Step View Controller-->
         <scene sceneID="4Pn-5E-cR3">
@@ -60,7 +68,7 @@
                                 <rect key="frame" x="0.0" y="210" width="414" height="526"/>
                             </imageView>
                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="fXd-Yv-T77">
-                                <rect key="frame" x="187.5" y="7" width="39" height="37"/>
+                                <rect key="frame" x="187" y="7" width="39" height="37"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="39" id="3sD-ZL-e36"/>
                                     <constraint firstAttribute="height" constant="37" id="9Di-Nj-g9Z"/>
@@ -75,6 +83,28 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7s3-yP-TRc">
+                                <rect key="frame" x="157" y="164" width="100" height="38"/>
+                                <color key="backgroundColor" red="0.94265609979629517" green="0.0" blue="0.10739751905202866" alpha="0.96381944444444445" colorSpace="custom" customColorSpace="sRGB"/>
+                                <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
+                                <state key="normal" title="Get Started">
+                                    <color key="titleColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="close:" destination="rdF-ra-nCS" eventType="touchUpInside" id="URq-VG-q60"/>
+                                    <segue destination="vXZ-lx-hvc" kind="show" id="fnI-8b-QxT"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vvP-CT-zvK">
+                                <rect key="frame" x="187" y="164" width="40" height="40"/>
+                                <state key="normal" backgroundImage="foward-1">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="nextScreen:" destination="rdF-ra-nCS" eventType="touchUpInside" id="By8-TW-mLC"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -96,6 +126,8 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                     <connections>
                         <outlet property="contentImageView" destination="udj-NM-VGP" id="flC-bU-e77"/>
+                        <outlet property="forwardButton" destination="vvP-CT-zvK" id="2rV-vZ-Jvz"/>
+                        <outlet property="getStartedButton" destination="7s3-yP-TRc" id="CwY-jL-iEx"/>
                         <outlet property="headingLabel" destination="t0W-ha-dNR" id="Up2-j5-AJa"/>
                         <outlet property="pageControl" destination="fXd-Yv-T77" id="ZTz-BY-nLd"/>
                         <outlet property="subHeadingLabel" destination="7Ag-m9-7VS" id="sEb-IA-3cs"/>
@@ -103,7 +135,10 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fKL-KL-5iv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1386" y="328"/>
+            <point key="canvasLocation" x="1534" y="338"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="foward-1" width="54" height="54"/>
+    </resources>
 </document>

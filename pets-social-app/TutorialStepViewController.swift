@@ -14,6 +14,8 @@ class TutorialStepViewController: UIViewController {
     @IBOutlet weak var subHeadingLabel: UILabel!
     @IBOutlet weak var contentImageView: UIImageView!
     @IBOutlet weak var pageControl: UIPageControl!
+    @IBOutlet weak var getStartedButton:UIButton!
+    @IBOutlet weak var forwardButton:UIButton!
 
     var index : Int = 0
     var heading : String = ""
@@ -28,6 +30,8 @@ class TutorialStepViewController: UIViewController {
         subHeadingLabel.text = subHeading
         contentImageView.image = UIImage(named: imageFile)
         pageControl.currentPage = index
+        getStartedButton.hidden = (index == 2) ? false : true
+        forwardButton.hidden = (index == 2) ? true: false
         
 
         // Do any additional setup after loading the view.
@@ -36,6 +40,15 @@ class TutorialStepViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    @IBAction func close(sender: AnyObject) {
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    @IBAction func nextScreen(sender: AnyObject) {
+        let tutorialViewController = self.parentViewController as TutorialViewController
+        tutorialViewController.forward(index)
     }
     
 
