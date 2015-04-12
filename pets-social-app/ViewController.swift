@@ -13,10 +13,10 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        var score = PFObject(className: "Score")
-        score.setObject("Angel", forKey: "name")
-        score.setObject(95, forKey: "number")
-        score.saveInBackground()
+//        var score = PFObject(className: "Score")
+//        score.setObject("Angel", forKey: "name")
+//        score.setObject(95, forKey: "number")
+//        score.saveInBackground()
         
 
     }

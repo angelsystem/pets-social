@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>1F024CCA-14D0-4B6B-A57A-F93FD2A3B3DB</string>
+	<key>IDESourceControlProjectName</key>
+	<string>pets-social-app</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>8A4C310336352C873227714A5191E9F43C6492AD</key>
+		<string>https://github.com/angelsystem/pets-social.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>pets-social-app.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>8A4C310336352C873227714A5191E9F43C6492AD</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/angelsystem/pets-social.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>8A4C310336352C873227714A5191E9F43C6492AD</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>8A4C310336352C873227714A5191E9F43C6492AD</string>
+			<key>IDESourceControlWCCName</key>
+			<string>pets-social-app</string>
+		</dict>
+	</array>
+</dict>
+</plist>

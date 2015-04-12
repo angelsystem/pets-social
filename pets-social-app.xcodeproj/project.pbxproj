@@ -26,6 +26,8 @@
 		AF4208CB1ADA1AAE005826C3 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AF4208CA1ADA1AAE005826C3 /* libsqlite3.dylib */; };
 		AF4208CF1ADA1B59005826C3 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF4208CD1ADA1B58005826C3 /* Bolts.framework */; };
 		AF4208D01ADA1B59005826C3 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF4208CE1ADA1B59005826C3 /* Parse.framework */; };
+		AF4208D51ADA293A005826C3 /* TutorialStepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4208D41ADA293A005826C3 /* TutorialStepViewController.swift */; };
+		AF4208D71ADA2CAB005826C3 /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4208D61ADA2CAB005826C3 /* TutorialViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +65,8 @@
 		AF4208CD1ADA1B58005826C3 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		AF4208CE1ADA1B59005826C3 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		AF4208D11ADA2108005826C3 /* pets-social-app-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "pets-social-app-Bridging-Header.h"; sourceTree = "<group>"; };
+		AF4208D41ADA293A005826C3 /* TutorialStepViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialStepViewController.swift; sourceTree = "<group>"; };
+		AF4208D61ADA2CAB005826C3 /* TutorialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +125,8 @@
 				AF4208961ADA1383005826C3 /* AppDelegate.swift */,
 				AF4208981ADA1383005826C3 /* ViewController.swift */,
 				AF42089A1ADA1383005826C3 /* Main.storyboard */,
+				AF4208D61ADA2CAB005826C3 /* TutorialViewController.swift */,
+				AF4208D41ADA293A005826C3 /* TutorialStepViewController.swift */,
 				AF42089D1ADA1383005826C3 /* Images.xcassets */,
 				AF42089F1ADA1383005826C3 /* LaunchScreen.xib */,
 				AF4208941ADA1383005826C3 /* Supporting Files */,
@@ -274,7 +280,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF4208D51ADA293A005826C3 /* TutorialStepViewController.swift in Sources */,
 				AF4208991ADA1383005826C3 /* ViewController.swift in Sources */,
+				AF4208D71ADA2CAB005826C3 /* TutorialViewController.swift in Sources */,
 				AF4208971ADA1383005826C3 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -404,6 +412,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = "pets-social-app/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "pets-social-app/pets-social-app-Bridging-Header.h";
@@ -421,6 +430,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = "pets-social-app/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "pets-social-app/pets-social-app-Bridging-Header.h";
