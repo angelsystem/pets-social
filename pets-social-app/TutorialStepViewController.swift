@@ -13,6 +13,7 @@ class TutorialStepViewController: UIViewController {
     @IBOutlet weak var headingLabel: UILabel!
     @IBOutlet weak var subHeadingLabel: UILabel!
     @IBOutlet weak var contentImageView: UIImageView!
+    @IBOutlet weak var pageControl: UIPageControl!
 
     var index : Int = 0
     var heading : String = ""
@@ -26,6 +27,7 @@ class TutorialStepViewController: UIViewController {
         headingLabel.text = heading
         subHeadingLabel.text = subHeading
         contentImageView.image = UIImage(named: imageFile)
+        pageControl.currentPage = index
         
 
         // Do any additional setup after loading the view.

@@ -63,16 +63,16 @@ class TutorialViewController: UIPageViewController, UIPageViewControllerDataSour
     }
 
     
-    func presentationCountForPageViewController(pageViewController: UIPageViewController) -> Int {
-        return pageHeadings.count
-    }
-    
-    func presentationIndexForPageViewController(pageViewController: UIPageViewController) -> Int {
-        if let tutorialStepViewController = storyboard?.instantiateViewControllerWithIdentifier("TutorialStepViewController") as? TutorialStepViewController {
-            return tutorialStepViewController.index
-        }
-        return 0
-    }
+//    func presentationCountForPageViewController(pageViewController: UIPageViewController) -> Int {
+//        return pageHeadings.count
+//    }
+//    
+//    func presentationIndexForPageViewController(pageViewController: UIPageViewController) -> Int {
+//        if let tutorialStepViewController = storyboard?.instantiateViewControllerWithIdentifier("TutorialStepViewController") as? TutorialStepViewController {
+//            return tutorialStepViewController.index
+//        }
+//        return 0
+//    }
     
 
     /*

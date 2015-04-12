@@ -59,6 +59,16 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="udj-NM-VGP">
                                 <rect key="frame" x="0.0" y="210" width="414" height="526"/>
                             </imageView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="fXd-Yv-T77">
+                                <rect key="frame" x="187.5" y="7" width="39" height="37"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="39" id="3sD-ZL-e36"/>
+                                    <constraint firstAttribute="height" constant="37" id="9Di-Nj-g9Z"/>
+                                    <constraint firstAttribute="width" constant="39" id="X7k-wS-FMU"/>
+                                </constraints>
+                                <color key="pageIndicatorTintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="currentPageIndicatorTintColor" red="0.80542570352554321" green="0.14644217491149902" blue="0.12475889176130295" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </pageControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Ag-m9-7VS">
                                 <rect key="frame" x="40" y="88" width="334" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -70,12 +80,14 @@
                         <constraints>
                             <constraint firstItem="t0W-ha-dNR" firstAttribute="topMargin" secondItem="ROw-fs-sI4" secondAttribute="top" constant="40" id="7YL-q4-4vx"/>
                             <constraint firstItem="udj-NM-VGP" firstAttribute="leading" secondItem="TqG-PE-lE7" secondAttribute="leading" id="Alw-As-a5D"/>
+                            <constraint firstItem="fXd-Yv-T77" firstAttribute="top" secondItem="TqG-PE-lE7" secondAttribute="top" constant="7" id="EDh-7n-HXt"/>
                             <constraint firstItem="7Ag-m9-7VS" firstAttribute="leading" secondItem="TqG-PE-lE7" secondAttribute="leading" constant="40" id="IeN-wp-HiA"/>
                             <constraint firstAttribute="trailing" secondItem="udj-NM-VGP" secondAttribute="trailing" id="VIM-2G-TiJ"/>
                             <constraint firstItem="egI-rO-rqo" firstAttribute="top" secondItem="udj-NM-VGP" secondAttribute="bottom" id="X1z-Jf-NIe"/>
                             <constraint firstItem="t0W-ha-dNR" firstAttribute="centerX" secondItem="7Ag-m9-7VS" secondAttribute="centerX" id="YYn-2h-dKh"/>
                             <constraint firstItem="udj-NM-VGP" firstAttribute="top" secondItem="t0W-ha-dNR" secondAttribute="bottom" constant="130" id="ZvU-Bi-ZX3"/>
                             <constraint firstAttribute="trailing" secondItem="t0W-ha-dNR" secondAttribute="trailing" id="gb2-RG-hwQ"/>
+                            <constraint firstAttribute="centerX" secondItem="fXd-Yv-T77" secondAttribute="centerX" id="oMM-by-LLE"/>
                             <constraint firstItem="t0W-ha-dNR" firstAttribute="leading" secondItem="TqG-PE-lE7" secondAttribute="leading" id="q48-9J-ta7"/>
                             <constraint firstItem="7Ag-m9-7VS" firstAttribute="top" secondItem="t0W-ha-dNR" secondAttribute="bottom" constant="8" id="v0m-vk-EPR"/>
                             <constraint firstAttribute="trailing" secondItem="7Ag-m9-7VS" secondAttribute="trailing" constant="40" id="vNY-BL-bTv"/>
@@ -85,6 +97,7 @@
                     <connections>
                         <outlet property="contentImageView" destination="udj-NM-VGP" id="flC-bU-e77"/>
                         <outlet property="headingLabel" destination="t0W-ha-dNR" id="Up2-j5-AJa"/>
+                        <outlet property="pageControl" destination="fXd-Yv-T77" id="ZTz-BY-nLd"/>
                         <outlet property="subHeadingLabel" destination="7Ag-m9-7VS" id="sEb-IA-3cs"/>
                     </connections>
                 </viewController>
