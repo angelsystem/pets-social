@@ -18,6 +18,21 @@ class ViewController: UIViewController {
 //        score.setObject(95, forKey: "number")
 //        score.saveInBackground()
         
+        var permissions = ["public_profile", "email"]
+        PFFacebookUtils.logInInBackgroundWithReadPermissions(permissions, {
+            (user: PFUser!, error: NSError!) -> Void in
+            println(user)
+            if let user = user {
+                if user.isNew {
+                    println("User signed up and logged in through Facebook!")
+                } else {
+                    println("User logged in through Facebook!")
+                }
+            } else {
+                println("Uh oh. The user cancelled the Facebook login.")
+            }
+        })
+        
 
     }
 

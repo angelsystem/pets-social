@@ -28,6 +28,9 @@
 		AF4208D51ADA293A005826C3 /* TutorialStepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4208D41ADA293A005826C3 /* TutorialStepViewController.swift */; };
 		AF4208D71ADA2CAB005826C3 /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4208D61ADA2CAB005826C3 /* TutorialViewController.swift */; };
 		AFC245741ADC928900F9B97F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AFC245731ADC928900F9B97F /* Images.xcassets */; };
+		AFC245761ADCDF4B00F9B97F /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFC245751ADCDF4B00F9B97F /* FBSDKCoreKit.framework */; };
+		AFC2457A1ADCE7CA00F9B97F /* ParseFacebookUtilsV4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFC245791ADCE7CA00F9B97F /* ParseFacebookUtilsV4.framework */; };
+		AFC2457C1ADCE89F00F9B97F /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFC2457B1ADCE89F00F9B97F /* FBSDKLoginKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +70,9 @@
 		AF4208D41ADA293A005826C3 /* TutorialStepViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialStepViewController.swift; sourceTree = "<group>"; };
 		AF4208D61ADA2CAB005826C3 /* TutorialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialViewController.swift; sourceTree = "<group>"; };
 		AFC245731ADC928900F9B97F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		AFC245751ADCDF4B00F9B97F /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		AFC245791ADCE7CA00F9B97F /* ParseFacebookUtilsV4.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtilsV4.framework; sourceTree = "<group>"; };
+		AFC2457B1ADCE89F00F9B97F /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,8 +91,11 @@
 				AF4208BF1ADA1A6C005826C3 /* MobileCoreServices.framework in Frameworks */,
 				AF4208BD1ADA1A5D005826C3 /* CoreLocation.framework in Frameworks */,
 				AF4208BB1ADA1A54005826C3 /* CoreGraphics.framework in Frameworks */,
+				AFC245761ADCDF4B00F9B97F /* FBSDKCoreKit.framework in Frameworks */,
 				AF4208B91ADA1A4B005826C3 /* CFNetwork.framework in Frameworks */,
 				AF4208B71ADA1A3E005826C3 /* AudioToolbox.framework in Frameworks */,
+				AFC2457C1ADCE89F00F9B97F /* FBSDKLoginKit.framework in Frameworks */,
+				AFC2457A1ADCE7CA00F9B97F /* ParseFacebookUtilsV4.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -163,9 +172,12 @@
 		AF4208CC1ADA1B36005826C3 /* frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AFC245751ADCDF4B00F9B97F /* FBSDKCoreKit.framework */,
 				AF4208CD1ADA1B58005826C3 /* Bolts.framework */,
 				AF4208CE1ADA1B59005826C3 /* Parse.framework */,
 				AF4208CA1ADA1AAE005826C3 /* libsqlite3.dylib */,
+				AFC2457B1ADCE89F00F9B97F /* FBSDKLoginKit.framework */,
+				AFC245791ADCE7CA00F9B97F /* ParseFacebookUtilsV4.framework */,
 				AF4208C81ADA1AA2005826C3 /* libz.dylib */,
 				AF4208C61ADA1A95005826C3 /* SystemConfiguration.framework */,
 				AF4208C41ADA1A8D005826C3 /* StoreKit.framework */,

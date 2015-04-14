@@ -7,8 +7,8 @@
 //
 
 import UIKit
-import Parse
-import Bolts
+//import Parse
+//import Bolts
 
 
 @UIApplicationMain
@@ -18,13 +18,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        Parse.enableLocalDatastore()
-        
+//        Parse.enableLocalDatastore()
+//        
         // Initialize Parse.
         Parse.setApplicationId("6964zbR1ihYU0DgUyf7dOK9XcAyNNDz880MaNlsB", clientKey: "85Pn4wTGUO1QFeYxlIoOotyLdlcddEIZmATQOUcd")
-        
-        // [Optional] Track statistics around application opens.
-        PFAnalytics.trackAppOpenedWithLaunchOptions(launchOptions)
+
+        PFFacebookUtils.initializeFacebookWithApplicationLaunchOptions(launchOptions)
+
+//        FBLoginView.self
+//        FBProfilePictureView.self
         
         return true
     }
@@ -49,6 +51,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    }
+    
+    func application(application: UIApplication, openURL url: NSURL,
+        sourceApplication: String?, annotation: AnyObject?) -> Bool {
+                return FBSDKApplicationDelegate.sharedInstance().application(application, openURL: url, sourceApplication: sourceApplication, annotation: annotation)
     }
 
 
