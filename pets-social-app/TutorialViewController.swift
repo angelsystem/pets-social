@@ -1,95 +1,92 @@
-//
-//  TutorialViewController.swift
-//  pets-social-app
-//
-//  Created by angelito on 4/11/15.
-//  Copyright (c) 2015 Angelito. All rights reserved.
-//
+/*
+* Copyright (c) 2015 Razeware LLC
+*
+* Permission is hereby granted, free of charge, to any person obtaining a copy
+* of this software and associated documentation files (the "Software"), to deal
+* in the Software without restriction, including without limitation the rights
+* to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+* copies of the Software, and to permit persons to whom the Software is
+* furnished to do so, subject to the following conditions:
+*
+* The above copyright notice and this permission notice shall be included in
+* all copies or substantial portions of the Software.
+*
+* THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+* IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+* FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+* AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+* LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+* OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+* THE SOFTWARE.
+*/
 
 import UIKit
 
-class TutorialViewController: UIPageViewController, UIPageViewControllerDataSource {
+class TutorialViewController: UIViewController {
+    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var pageControl: UIPageControl!
     
-    var pageHeadings = ["Personalize", "Locate", "Discover"]
-    var pageImages = ["bg_1", "bg_2", "bg_3"]
-    var pageSubHeadings = ["Pin your favourite restaurants and create your own food guide", "Search and locate your favourit restaurant on Maps", "Find restaurants pinned by your friends and other foodies around the world"]
-
+    var pages = [TutorialStepViewController]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        scrollView.pagingEnabled = true
+        
+        let page1 = createAndAddTutorialStep("bg_1", iconImageName: "icon_1", text: "PetSocial is a pet photo sharing community.")
+        let page2 = createAndAddTutorialStep("bg_2", iconImageName: "icon_2", text: "Take pictures of your pet, and add filters or clipart to help them shine.")
+        let page3 = createAndAddTutorialStep("bg_3", iconImageName: "icon_3", text: "Share your photos via Facebook, email, Twitter, or instant message.")
 
-        // Do any additional setup after loading the view.
-        // Set the data source to itself
-        dataSource = self
-        // Create the first walkthrough screen
-        if let startingViewController = self.viewControllerAtIndex(0) {
-                setViewControllers([startingViewController], direction: .Forward, animated: true,
-                completion: nil)
-        }
-    
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    func pageViewController(pageViewController: UIPageViewController, viewControllerAfterViewController viewController: UIViewController) -> UIViewController? {
-        var index = (viewController as TutorialStepViewController).index
-        index++
-        return self.viewControllerAtIndex(index)
-    }
-    
-    func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController? {
-        var index = (viewController as TutorialStepViewController).index
-        index--
-        return self.viewControllerAtIndex(index)
-    }
-
-    func viewControllerAtIndex(index: Int) -> TutorialStepViewController? {
-            if index == NSNotFound || index < 0 || index >= self.pageHeadings.count {
-            return nil
-            }
-            // Create a new view controller and pass suitable data.
-            if let tutorialStepViewController =
-            storyboard?.instantiateViewControllerWithIdentifier("TutorialStepViewController") as?
-            TutorialStepViewController {
-                tutorialStepViewController.imageFile = pageImages[index]
-                tutorialStepViewController.heading = pageHeadings[index]
-                tutorialStepViewController.subHeading = pageSubHeadings[index]
-                tutorialStepViewController.index = index
-                return tutorialStepViewController
-            }
-            return nil
+        
+        pages = [page1, page2, page3]
+        
+        pageControl.numberOfPages = pages.count
+        
+        let views = ["view": view, "page1": page1.view, "page2": page2.view, "page3": page3.view]
+        let metrics = ["edgeMargin": 10, "betweenMargin": 20]
+        
+        let verticalConstraints =
+        NSLayoutConstraint.constraintsWithVisualFormat(
+            "V:|[page1(==view)]|", options: nil, metrics: nil, views: views)
+        NSLayoutConstraint.activateConstraints(verticalConstraints)
+        
+        let horizontalConstraints =
+        NSLayoutConstraint.constraintsWithVisualFormat(
+            "H:|-edgeMargin-[page1(==view)]-betweenMargin-[page2(==view)]-betweenMargin-[page3(==view)]-edgeMargin-|", options: .AlignAllTop | .AlignAllBottom, metrics: metrics, views: views)
+        NSLayoutConstraint.activateConstraints(horizontalConstraints)
     }
     
-    func forward(index: Int) {
-        if let nextViewController = self.viewControllerAtIndex(index + 1) {
-        setViewControllers([nextViewController], direction: .Forward, animated: true,
-        completion: nil)
-        }
+    @IBAction func pageChanged(sender: UIPageControl) {
+        let currentPage = sender.currentPage
+        let pageWidth = CGRectGetWidth(scrollView.bounds)
+        let targetContentOffsetX = CGFloat(currentPage) * pageWidth
+        
+        UIView.animateWithDuration(0.33, delay: 0, options: .CurveEaseInOut, animations: { () -> Void in
+            self.scrollView.contentOffset.x = targetContentOffsetX
+            }, completion: nil)
     }
-
     
-//    func presentationCountForPageViewController(pageViewController: UIPageViewController) -> Int {
-//        return pageHeadings.count
-//    }
-//    
-//    func presentationIndexForPageViewController(pageViewController: UIPageViewController) -> Int {
-//        if let tutorialStepViewController = storyboard?.instantiateViewControllerWithIdentifier("TutorialStepViewController") as? TutorialStepViewController {
-//            return tutorialStepViewController.index
-//        }
-//        return 0
-//    }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    private func createAndAddTutorialStep(backgroundImageName: String, iconImageName: String, text: String) -> TutorialStepViewController {
+        let tutorialStep = storyboard!.instantiateViewControllerWithIdentifier("TutorialStepViewController") as TutorialStepViewController
+        tutorialStep.view.setTranslatesAutoresizingMaskIntoConstraints(false)
+        tutorialStep.backgroundImage = UIImage(named: backgroundImageName)
+        tutorialStep.iconImage = UIImage(named: iconImageName)
+        tutorialStep.text = text
+        
+        scrollView.addSubview(tutorialStep.view)
+        
+        addChildViewController(tutorialStep)
+        tutorialStep.didMoveToParentViewController(self)
+        
+        return tutorialStep
     }
-    */
+}
 
+extension TutorialViewController: UIScrollViewDelegate {
+    func scrollViewDidScroll(scrollView: UIScrollView) {
+        let pageWidth = CGRectGetWidth(scrollView.bounds)
+        let pageFraction = scrollView.contentOffset.x / pageWidth
+        
+        pageControl.currentPage = Int(round(pageFraction))
+    }
 }

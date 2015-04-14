@@ -10,7 +10,6 @@
 		AF4208971ADA1383005826C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4208961ADA1383005826C3 /* AppDelegate.swift */; };
 		AF4208991ADA1383005826C3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4208981ADA1383005826C3 /* ViewController.swift */; };
 		AF42089C1ADA1383005826C3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF42089A1ADA1383005826C3 /* Main.storyboard */; };
-		AF42089E1ADA1383005826C3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF42089D1ADA1383005826C3 /* Images.xcassets */; };
 		AF4208A11ADA1383005826C3 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF42089F1ADA1383005826C3 /* LaunchScreen.xib */; };
 		AF4208AD1ADA1383005826C3 /* pets_social_appTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4208AC1ADA1383005826C3 /* pets_social_appTests.swift */; };
 		AF4208B71ADA1A3E005826C3 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF4208B61ADA1A3E005826C3 /* AudioToolbox.framework */; };
@@ -28,6 +27,7 @@
 		AF4208D01ADA1B59005826C3 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF4208CE1ADA1B59005826C3 /* Parse.framework */; };
 		AF4208D51ADA293A005826C3 /* TutorialStepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4208D41ADA293A005826C3 /* TutorialStepViewController.swift */; };
 		AF4208D71ADA2CAB005826C3 /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4208D61ADA2CAB005826C3 /* TutorialViewController.swift */; };
+		AFC245741ADC928900F9B97F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AFC245731ADC928900F9B97F /* Images.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,7 +46,6 @@
 		AF4208961ADA1383005826C3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AF4208981ADA1383005826C3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		AF42089B1ADA1383005826C3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		AF42089D1ADA1383005826C3 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		AF4208A01ADA1383005826C3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		AF4208A61ADA1383005826C3 /* pets-social-appTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "pets-social-appTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF4208AB1ADA1383005826C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -67,6 +66,7 @@
 		AF4208D11ADA2108005826C3 /* pets-social-app-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "pets-social-app-Bridging-Header.h"; sourceTree = "<group>"; };
 		AF4208D41ADA293A005826C3 /* TutorialStepViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialStepViewController.swift; sourceTree = "<group>"; };
 		AF4208D61ADA2CAB005826C3 /* TutorialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialViewController.swift; sourceTree = "<group>"; };
+		AFC245731ADC928900F9B97F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,8 +127,8 @@
 				AF42089A1ADA1383005826C3 /* Main.storyboard */,
 				AF4208D61ADA2CAB005826C3 /* TutorialViewController.swift */,
 				AF4208D41ADA293A005826C3 /* TutorialStepViewController.swift */,
-				AF42089D1ADA1383005826C3 /* Images.xcassets */,
 				AF42089F1ADA1383005826C3 /* LaunchScreen.xib */,
+				AFC245731ADC928900F9B97F /* Images.xcassets */,
 				AF4208941ADA1383005826C3 /* Supporting Files */,
 			);
 			path = "pets-social-app";
@@ -260,9 +260,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AFC245741ADC928900F9B97F /* Images.xcassets in Resources */,
 				AF42089C1ADA1383005826C3 /* Main.storyboard in Resources */,
 				AF4208A11ADA1383005826C3 /* LaunchScreen.xib in Resources */,
-				AF42089E1ADA1383005826C3 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -412,7 +412,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = "pets-social-app/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "pets-social-app/pets-social-app-Bridging-Header.h";
@@ -430,7 +430,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = "pets-social-app/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "pets-social-app/pets-social-app-Bridging-Header.h";
